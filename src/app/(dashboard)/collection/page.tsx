@@ -1,7 +1,9 @@
+import { Suspense } from "react";
 import Form from "next/form";
 import Link from "next/link";
 
 import { PageHeader } from "@/components/shared/page-header";
+import { ClassicProgress, ClassicProgressSkeleton } from "@/features/progress/components/classic-progress";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { CopyList } from "@/features/collection/components/copy-list";
@@ -46,6 +48,11 @@ export default async function CollectionPage({ searchParams }: PageProps<"/colle
   return (
     <>
       <PageHeader title="Collection" description="Every physical copy you own, grouped by card." />
+      <div className="mb-6">
+        <Suspense fallback={<ClassicProgressSkeleton variant="bar" />}>
+          <ClassicProgress variant="bar" />
+        </Suspense>
+      </div>
 
       <dl className="mb-6 grid grid-cols-2 gap-3">
         <div className="rounded-xl p-4 ring-1 ring-foreground/10">

@@ -7,6 +7,7 @@ import { RecentAcquisitions } from "@/features/dashboard/components/recent-acqui
 import { RecentPurchases } from "@/features/dashboard/components/recent-purchases";
 import { SetProgressSection } from "@/features/dashboard/components/set-progress-section";
 import { SectionSkeleton, TilesSkeleton } from "@/features/dashboard/components/stat-tile";
+import { ClassicProgress, ClassicProgressSkeleton } from "@/features/progress/components/classic-progress";
 import { WishlistSummary } from "@/features/dashboard/components/wishlist-summary";
 import { requireOwner } from "@/lib/auth";
 
@@ -16,6 +17,10 @@ export default async function DashboardPage() {
   return (
     <div className="grid gap-6">
       <PageHeader title="Dashboard" description="Your collection at a glance." />
+
+      <Suspense fallback={<ClassicProgressSkeleton variant="hero" />}>
+        <ClassicProgress variant="hero" />
+      </Suspense>
 
       <section aria-label="Collection totals" className="grid gap-3">
         <Suspense fallback={<TilesSkeleton count={4} />}>

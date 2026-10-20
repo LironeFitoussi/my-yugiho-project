@@ -1,7 +1,9 @@
+import { Suspense } from "react";
 import Form from "next/form";
 import Link from "next/link";
 
 import { PageHeader } from "@/components/shared/page-header";
+import { ClassicProgress, ClassicProgressSkeleton } from "@/features/progress/components/classic-progress";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { SetList } from "@/features/sets/components/set-list";
@@ -17,6 +19,11 @@ export default async function SetsPage({ searchParams }: PageProps<"/sets">) {
   return (
     <>
       <PageHeader title="Official Sets" description="Browse official TCG sets and track unique-card completion." />
+      <div className="mb-6">
+        <Suspense fallback={<ClassicProgressSkeleton variant="bar" />}>
+          <ClassicProgress variant="bar" />
+        </Suspense>
+      </div>
 
       <Form action="/sets" className="mb-4 flex flex-wrap items-center gap-2" role="search">
         <label htmlFor="q" className="sr-only">
