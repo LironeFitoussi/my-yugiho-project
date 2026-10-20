@@ -2,29 +2,40 @@
   "name": "my-yugiho-project",
   "image": "mcr.microsoft.com/devcontainers/typescript-node:24-bookworm",
   "features": {
-    "ghcr.io/devcontainers/features/github-cli:1": {}
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers/features/aws-cli:1": {},
+    "ghcr.io/devcontainers/features/terraform:1": {},
+    // Java runtime for DynamoDB Local (jar installed by install-tools.sh)
+    "ghcr.io/devcontainers/features/java:1": { "version": "21" }
   },
   // node_modules in named volume: avoids slow Windows bind-mount I/O
   "mounts": [
-    "source=${localWorkspaceFolderBasename}-node_modules,target=${containerWorkspaceFolder}/node_modules,type=volume"
+    "source=${localWorkspaceFolderBasename}-node_modules,target=${containerWorkspaceFolder}/node_modules,type=volume",
+    // AWS profiles/SSO cache survive container rebuilds
+    "source=${localWorkspaceFolderBasename}-aws,target=/home/node/.aws,type=volume",
+    // Render CLI login survives container rebuilds
+    "source=${localWorkspaceFolderBasename}-render,target=/home/node/.render,type=volume"
   ],
   "containerEnv": {
     // file watching over Windows bind mounts needs polling
     "WATCHPACK_POLLING": "true",
     "CHOKIDAR_USEPOLLING": "true",
-    "NEXT_TELEMETRY_DISABLED": "1"
+    "NEXT_TELEMETRY_DISABLED": "1",
+    "AWS_PAGER": ""
   },
-  "forwardPorts": [3000],
+  "forwardPorts": [3000, 8000],
   "portsAttributes": {
-    "3000": { "label": "Next.js", "onAutoForward": "openBrowser" }
+    "3000": { "label": "Next.js", "onAutoForward": "openBrowser" },
+    "8000": { "label": "DynamoDB Local", "onAutoForward": "silent" }
   },
-  "postCreateCommand": "sudo chown node node_modules && npm ci",
+  "postCreateCommand": "sudo chown node node_modules /home/node/.aws /home/node/.render && npm ci && bash .devcontainer/install-tools.sh",
   "customizations": {
     "vscode": {
       "extensions": [
         "dbaeumer.vscode-eslint",
         "esbenp.prettier-vscode",
-        "bradlc.vscode-tailwindcss"
+        "bradlc.vscode-tailwindcss",
+        "hashicorp.terraform"
       ],
       "settings": {
         "editor.formatOnSave": true,

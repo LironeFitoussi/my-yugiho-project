@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "db:local": "mkdir -p .dynamodb && java -Djava.library.path=$HOME/.dynamodb-local/DynamoDBLocal_lib -jar $HOME/.dynamodb-local/DynamoDBLocal.jar -sharedDb -dbPath .dynamodb -port 8000"
   },
   "dependencies": {
     "next": "16.4.2",
