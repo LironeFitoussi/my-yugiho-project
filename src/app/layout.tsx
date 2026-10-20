@@ -38,7 +38,8 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
-      <body className="flex min-h-full flex-col">
+      {/* Extensions (e.g. Grammarly) inject attributes on <body> before hydration; this only silences attribute diffs on this element. */}
+      <body className="flex min-h-full flex-col" suppressHydrationWarning>
         <TooltipProvider>{children}</TooltipProvider>
         <Toaster />
         <ServiceWorkerRegister />
