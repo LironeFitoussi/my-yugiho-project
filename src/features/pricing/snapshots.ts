@@ -14,11 +14,23 @@ const MAX_IN_FLIGHT = 5;
  * Writes one PRICE_SNAPSHOT per card with a market price, at most once per UTC day
  * (conditional Put; an existing snapshot for today is left untouched). ≤ 5 writes in flight.
  */
+// Per-process memo of `${date}#${cardId}` already snapshotted (written or found existing), so only the
+// first valuation of the day touches DynamoDB; the conditional Put still guards across restarts.
+const snapshotted = new Set<string>();
+let memoDate = "";
+
 export async function recordPriceSnapshots(cards: Card[]): Promise<{ written: number; skipped: number }> {
+  const today = todayUtc();
+  if (memoDate !== today) {
+    snapshotted.clear();
+    memoDate = today;
+  }
   const priced = cards.flatMap((card) =>
-    card.marketPrice && card.marketPrice.amountMinor > 0 ? [{ id: card.id, price: card.marketPrice }] : [],
+    card.marketPrice && card.marketPrice.amountMinor > 0 && !snapshotted.has(`${today}#${card.id}`)
+      ? [{ id: card.id, price: card.marketPrice }]
+      : [],
   );
-  const SK = dateSk(todayUtc());
+  const SK = dateSk(today);
   const client = ddb();
   const TableName = tableName();
   let written = 0;
@@ -47,9 +59,12 @@ export async function recordPriceSnapshots(cards: Card[]): Promise<{ written: nu
         }),
       );
       written += 1;
+      snapshotted.add(`${today}#${id}`);
     } catch (error) {
-      if ((error as { name?: string }).name === "ConditionalCheckFailedException") skipped += 1;
-      else throw error;
+      if ((error as { name?: string }).name === "ConditionalCheckFailedException") {
+        skipped += 1;
+        snapshotted.add(`${today}#${id}`);
+      } else throw error;
     }
   }
 
