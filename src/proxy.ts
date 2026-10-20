@@ -19,6 +19,7 @@ export function proxy(request: NextRequest) {
 
 export const config = {
   matcher: [
-    "/((?!login|api/auth|api/health|_next/static|_next/image|favicon.ico|manifest.webmanifest|sw.js|icons/|apple-touch-icon).*)",
+    // Public assets the login screen and PWA install need before sign-in (tab icon, brand logo, icons).
+    "/((?!login|api/auth|api/health|_next/static|_next/image|favicon.ico|icon.png|manifest.webmanifest|sw.js|icons/|brand/|apple-touch-icon).*)",
   ],
 };
