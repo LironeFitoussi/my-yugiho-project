@@ -1,26 +1,249 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
+  --font-display: var(--font-cinzel);
   --font-mono: var(--font-geist-mono);
-}
+  --font-heading: var(--font-cinzel);
+  --color-gold: var(--gold);
+  --color-gold-deep: var(--gold-deep);
+  --color-violet: var(--violet);
+  --color-arcane: var(--arcane);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --animate-shimmer: shimmer 1.8s linear infinite;
+  --animate-card-spin: card-spin 2.6s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  --animate-glow-pulse: glow-pulse 2.6s ease-in-out infinite;
+
+  @keyframes shimmer {
+    from {
+      background-position: 200% 0;
+    }
+    to {
+      background-position: -200% 0;
+    }
+  }
+  @keyframes card-spin {
+    0%,
+    15% {
+      transform: rotateY(0deg);
+    }
+    50%,
+    65% {
+      transform: rotateY(180deg);
+    }
+    100% {
+      transform: rotateY(360deg);
+    }
+  }
+  @keyframes glow-pulse {
+    0%,
+    100% {
+      opacity: 0.45;
+      transform: scale(0.92);
+    }
+    50% {
+      opacity: 0.9;
+      transform: scale(1.05);
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Light ("parchment") — not the default, kept usable. */
+:root {
+  --background: oklch(0.985 0.008 85);
+  --foreground: oklch(0.2 0.03 285);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.2 0.03 285);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.2 0.03 285);
+  --primary: oklch(0.52 0.11 75);
+  --primary-foreground: oklch(0.99 0.005 85);
+  --secondary: oklch(0.95 0.015 290);
+  --secondary-foreground: oklch(0.25 0.05 290);
+  --muted: oklch(0.955 0.01 290);
+  --muted-foreground: oklch(0.48 0.03 285);
+  --accent: oklch(0.93 0.04 295);
+  --accent-foreground: oklch(0.3 0.1 295);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.88 0.03 85);
+  --input: oklch(0.88 0.03 85);
+  --ring: oklch(0.62 0.13 80);
+  --chart-1: oklch(0.62 0.13 80);
+  --chart-2: oklch(0.5 0.2 300);
+  --chart-3: oklch(0.58 0.11 190);
+  --chart-4: oklch(0.56 0.22 350);
+  --chart-5: oklch(0.62 0.16 55);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.97 0.012 85);
+  --sidebar-foreground: oklch(0.2 0.03 285);
+  --sidebar-primary: oklch(0.52 0.11 75);
+  --sidebar-primary-foreground: oklch(0.99 0.005 85);
+  --sidebar-accent: oklch(0.94 0.02 85);
+  --sidebar-accent-foreground: oklch(0.25 0.05 290);
+  --sidebar-border: oklch(0.88 0.03 85);
+  --sidebar-ring: oklch(0.62 0.13 80);
+  --gold: oklch(0.6 0.12 80);
+  --gold-deep: oklch(0.48 0.1 65);
+  --violet: oklch(0.5 0.2 300);
+  --arcane: oklch(0.55 0.2 300);
+}
+
+/* "Shadow Realm" — the default theme (<html class="dark">). */
+.dark {
+  --background: oklch(0.16 0.03 285);
+  --foreground: oklch(0.96 0.012 290);
+  --card: oklch(0.205 0.04 288);
+  --card-foreground: oklch(0.96 0.012 290);
+  --popover: oklch(0.21 0.045 288);
+  --popover-foreground: oklch(0.96 0.012 290);
+  --primary: oklch(0.8 0.14 85);
+  --primary-foreground: oklch(0.2 0.04 285);
+  --secondary: oklch(0.27 0.05 290);
+  --secondary-foreground: oklch(0.95 0.012 290);
+  --muted: oklch(0.25 0.04 288);
+  --muted-foreground: oklch(0.75 0.03 290);
+  --accent: oklch(0.32 0.09 295);
+  --accent-foreground: oklch(0.97 0.01 290);
+  --destructive: oklch(0.7 0.19 22);
+  --border: oklch(0.8 0.1 85 / 16%);
+  --input: oklch(0.78 0.06 295 / 24%);
+  --ring: oklch(0.8 0.14 85);
+  --chart-1: oklch(0.8 0.14 85);
+  --chart-2: oklch(0.64 0.2 300);
+  --chart-3: oklch(0.74 0.12 190);
+  --chart-4: oklch(0.68 0.22 350);
+  --chart-5: oklch(0.74 0.15 55);
+  --sidebar: oklch(0.18 0.035 287);
+  --sidebar-foreground: oklch(0.96 0.012 290);
+  --sidebar-primary: oklch(0.8 0.14 85);
+  --sidebar-primary-foreground: oklch(0.2 0.04 285);
+  --sidebar-accent: oklch(0.27 0.06 292);
+  --sidebar-accent-foreground: oklch(0.97 0.01 290);
+  --sidebar-border: oklch(0.8 0.1 85 / 14%);
+  --sidebar-ring: oklch(0.8 0.14 85);
+  --gold: oklch(0.82 0.14 85);
+  --gold-deep: oklch(0.68 0.14 65);
+  --violet: oklch(0.64 0.2 300);
+  --arcane: oklch(0.45 0.2 300);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    overscroll-behavior-y: none;
+  }
+  button:not(:disabled), [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  html {
+    @apply font-sans;
+    -webkit-tap-highlight-color: transparent;
+    color-scheme: light;
+  }
+  html.dark {
+    color-scheme: dark;
+  }
+  ::selection {
+    background: color-mix(in oklch, var(--gold) 35%, transparent);
+  }
+}
+
+/* 1px gold→violet gradient border (background-clip trick). Fill via --frame-fill. */
+@utility frame-gold {
+  --frame-fill: var(--card);
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--frame-fill), var(--frame-fill)) padding-box,
+    linear-gradient(
+        135deg,
+        color-mix(in oklch, var(--gold) 85%, transparent),
+        color-mix(in oklch, var(--violet) 45%, transparent) 45%,
+        color-mix(in oklch, var(--gold-deep) 70%, transparent)
+      )
+      border-box;
+}
+
+/* Gold metallic gradient text for brand / display headings. */
+@utility text-gold-gradient {
+  background-image: linear-gradient(180deg, oklch(0.93 0.09 92), var(--gold) 45%, var(--gold-deep));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Gold/violet shimmer sweep used by <Skeleton>. */
+@utility shimmer {
+  background-image: linear-gradient(
+    100deg,
+    var(--muted) 20%,
+    color-mix(in oklch, var(--gold) 16%, var(--muted)) 40%,
+    color-mix(in oklch, var(--violet) 14%, var(--muted)) 55%,
+    var(--muted) 75%
+  );
+  background-size: 200% 100%;
+  animation: var(--animate-shimmer);
+}
+
+/* Soft gold glow for hover/focus on card tiles. */
+@utility glow-gold {
+  box-shadow:
+    0 0 0 1px color-mix(in oklch, var(--gold) 55%, transparent),
+    0 8px 28px -6px color-mix(in oklch, var(--gold) 45%, transparent);
+}
+
+/* Motion is decoration only: honour the OS setting by freezing everything at its end state. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

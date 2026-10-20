@@ -25,7 +25,7 @@ Next.js 16 (App Router, `src/`) · React 19 · TypeScript (strict) · Tailwind C
 | Build | `npm run build` |
 | DynamoDB Local (port 8000, data in `.dynamodb/`) | `npm run db:local` |
 | Query local DB | `aws dynamodb list-tables --endpoint-url http://localhost:8000` |
-| Infra | `cd infra && terraform fmt && terraform validate && terraform plan` |
+| Infra | `cd infrastructure/terraform && terraform fmt && terraform validate && terraform plan` |
 | Render | `render services`, `render deploys list` (CLI v2, needs `render login`) |
 
 ## Tooling (devcontainer)
@@ -37,7 +37,7 @@ Installed by `.devcontainer/devcontainer.json` features and `.devcontainer/insta
 | Node.js / npm | 24 / 11 | app runtime; `npm` is the package manager (pnpm, yarn also present — don't use) |
 | Git + GitHub CLI (`gh`) | latest | repo, PRs, Actions, secrets |
 | AWS CLI v2 (`aws`) | latest | DynamoDB, IAM, CloudWatch |
-| Terraform | latest | AWS infra in `infra/` (the chosen IaC) |
+| Terraform | latest | AWS infra in `infrastructure/terraform/` (state bucket in `infrastructure/bootstrap/`) (the chosen IaC) |
 | AWS CDK (`cdk`) | 2.1146.0 | installed, but Terraform is the IaC of record — don't mix |
 | Render CLI (`render`) | 2.28.0 | services, deploys, logs, `render blueprints validate` |
 | Render agent skills | user scope | `render-*` skills (deploy, debug, monitor, env vars, blueprints, …) in `~/.claude/skills`, `~/.agents/skills`, `~/.copilot/skills` — use them for Render work |
@@ -54,7 +54,7 @@ Before declaring work done: `npm run lint && npm run typecheck` pass, plus tests
 - `src/features/<domain>/` — catalog, collection, sets, products, purchases, pricing, wishlist (domain logic, server actions, feature components)
 - `src/lib/aws` (DynamoDB client + repositories), `src/lib/auth`, `src/lib/ygoprodeck` (catalog client), `src/lib/utils`
 - `src/components/ui` (shadcn), `layout`, `shared` · `src/types`
-- `infra/` — Terraform (DynamoDB table, IAM user/policy) · `tests/` — Vitest + Playwright · `render.yaml` — Render blueprint
+- `infrastructure/terraform/` — Terraform (DynamoDB table, IAM user/policy) · `tests/` — Vitest + Playwright · `render.yaml` — Render blueprint
 
 ## Non-negotiable business rules
 

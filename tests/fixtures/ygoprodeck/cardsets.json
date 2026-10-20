@@ -1,0 +1,78 @@
+[
+  {
+    "set_name": "2-Player Starter Deck: Yuya & Declan",
+    "set_code": "YS15",
+    "num_of_cards": 42,
+    "tcg_date": "2015-05-28",
+    "set_image": "https://images.ygoprodeck.com/images/sets/YS15.jpg"
+  },
+  {
+    "set_name": "2-Player Starter Set",
+    "set_code": "STAX",
+    "num_of_cards": 88,
+    "tcg_date": "2024-01-26"
+  },
+  {
+    "set_name": "Dark Legion Starter Deck",
+    "set_code": "YS15",
+    "num_of_cards": 29,
+    "tcg_date": "2015-05-29",
+    "set_image": "https://images.ygoprodeck.com/images/sets/YS15.jpg"
+  },
+  {
+    "set_name": "Egyptian God Deck: Obelisk the Tormentor",
+    "set_code": "EGO1",
+    "num_of_cards": 35,
+    "tcg_date": "2021-06-17",
+    "set_image": "https://images.ygoprodeck.com/images/sets/EGO1.jpg"
+  },
+  {
+    "set_name": "Invasion of Chaos",
+    "set_code": "IOC",
+    "num_of_cards": 224,
+    "tcg_date": "2004-03-01",
+    "set_image": "https://images.ygoprodeck.com/images/sets/IOC.jpg"
+  },
+  {
+    "set_name": "Invasion of Chaos: Special Edition",
+    "set_code": "IOC",
+    "num_of_cards": 4,
+    "tcg_date": "2004-04-01",
+    "set_image": "https://images.ygoprodeck.com/images/sets/IOC.jpg"
+  },
+  {
+    "set_name": "Legend of Blue Eyes White Dragon",
+    "set_code": "LOB",
+    "num_of_cards": 355,
+    "tcg_date": "2002-03-08",
+    "set_image": "https://images.ygoprodeck.com/images/sets/LOB.jpg"
+  },
+  {
+    "set_name": "Legend of Blue Eyes White Dragon (25th Anniversary Edition)",
+    "set_code": "LOB",
+    "num_of_cards": 14,
+    "tcg_date": "2023-04-20",
+    "set_image": "https://images.ygoprodeck.com/images/sets/LOB.jpg"
+  },
+  {
+    "set_name": "Saber Force Starter Deck",
+    "set_code": "YS15",
+    "num_of_cards": 28,
+    "tcg_date": "2015-05-29",
+    "set_image": "https://images.ygoprodeck.com/images/sets/YS15.jpg"
+  },
+  {
+    "set_name": "Starter Deck: Yugi",
+    "set_code": "SDY",
+    "num_of_cards": 95,
+    "tcg_date": "2002-03-29",
+    "set_image": "https://images.ygoprodeck.com/images/sets/SDY.jpg"
+  },
+  {
+    "set_name": "Summoned Skull Sample promotional card",
+    "set_code": "SDY",
+    "num_of_cards": 1,
+    "tcg_date": "2001-01-01",
+    "set_image": "https://images.ygoprodeck.com/images/sets/SDY.jpg"
+  }
+]
