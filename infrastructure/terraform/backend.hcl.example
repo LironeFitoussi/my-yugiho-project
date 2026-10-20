@@ -3,6 +3,6 @@
 #   terraform init -backend-config=backend.hcl
 bucket       = "yugioh-collection-tfstate-<account_id>"
 key          = "yugioh-collection/terraform.tfstate"
-region       = "us-east-1"
+region       = "eu-central-1"
 encrypt      = true
 use_lockfile = true

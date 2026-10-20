@@ -6,8 +6,8 @@ services:
     name: yugioh-collection
     runtime: node
     # Frankfurt is the closest Render region to the user in Israel.
-    # Region is immutable after creation. DynamoDB stays in us-east-1
-    # (AWS_REGION below), so expect cross-region latency per DB call.
+    # Region is immutable after creation. DynamoDB lives in eu-central-1
+    # (Frankfurt, AWS_REGION below) to keep DB calls in-region.
     region: frankfurt
     plan: starter # 0.5 CPU / 512 MB (current plan ID: 0.5c-512mb)
     branch: master
@@ -19,7 +19,7 @@ services:
       - key: NODE_VERSION
         value: "24"
       - key: AWS_REGION
-        value: us-east-1
+        value: eu-central-1
       - key: DYNAMODB_TABLE
         value: yugioh-collection
       - key: AUTH_TRUST_HOST

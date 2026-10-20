@@ -1,7 +1,7 @@
 variable "aws_region" {
   description = "AWS region for the DynamoDB table. Must match AWS_REGION in render.yaml."
   type        = string
-  default     = "us-east-1"
+  default     = "eu-central-1"
 }
 
 variable "table_name" {

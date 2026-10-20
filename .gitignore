@@ -53,3 +53,10 @@ crash.log
 
 # claude code (personal settings)
 .claude/settings.local.json
+
+# playwright
+/playwright-report/
+/test-results/
+
+# agent worktrees
+.claude/worktrees/
