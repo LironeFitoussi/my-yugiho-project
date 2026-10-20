@@ -3,7 +3,7 @@
 # and never stores them in this file.
 services:
   - type: web
-    name: yugioh-collection
+    name: duelvault
     runtime: node
     # Frankfurt is the closest Render region to the user in Israel.
     # Region is immutable after creation. DynamoDB lives in eu-central-1

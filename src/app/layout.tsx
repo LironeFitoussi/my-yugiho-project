@@ -26,10 +26,10 @@ const cinzel = Cinzel({
 });
 
 export const metadata: Metadata = {
-  title: { default: "YGO Collection", template: "%s · YGO Collection" },
-  description: "Private Yu-Gi-Oh! collection manager",
+  title: { default: "DuelVault", template: "%s · DuelVault" },
+  description: "DuelVault — private Yu-Gi-Oh! collection manager",
   robots: { index: false, follow: false },
-  appleWebApp: { capable: true, statusBarStyle: "black-translucent", title: "YGO Collection" },
+  appleWebApp: { capable: true, statusBarStyle: "black-translucent", title: "DuelVault" },
   icons: { apple: "/apple-touch-icon.png" },
 };
 

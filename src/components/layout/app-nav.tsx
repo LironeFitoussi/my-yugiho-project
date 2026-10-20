@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
-import { Emblem } from "@/components/shared/emblem";
+import { APP_NAME, BrandLogo } from "@/components/shared/brand-logo";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 
@@ -23,9 +23,9 @@ export function SidebarNav() {
         href="/"
         className="mb-4 flex items-center gap-2.5 rounded-lg px-3 py-2 focus-visible:outline-2 focus-visible:outline-ring"
       >
-        <Emblem className="size-8 shrink-0 drop-shadow-[0_0_6px_oklch(0.82_0.14_85/0.45)]" />
+        <BrandLogo className="size-9 shrink-0" priority />
         <span className="font-display text-lg leading-tight font-bold tracking-wide text-gold-gradient">
-          YGO Collection
+          {APP_NAME}
         </span>
       </Link>
       {NAV_ITEMS.map(({ href, label, icon: Icon }) => (
