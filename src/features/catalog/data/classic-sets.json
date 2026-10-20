@@ -1,0 +1,11 @@
+{
+  "version": "2026-10-20",
+  "rule": "Curated list of YGOPRODeck set-code prefixes (cardsets.php `set_code`) treated as 'classic Duel Monsters'. Included: (1) North American TCG core booster sets of the original Duel Monsters era, 2002-03 (LOB) through 2005-08 (CRV); (2) the DM-character Starter Decks of that era (Yugi, Kaiba, Joey, Pegasus, Kaiba/Yugi Evolution); (3) 2004-2005 reprint sets of that era's cards (Dark Beginning 1-2, Dark Revelation 1-2); (4) 2002-2005 tins, Tournament Packs and promotional products (BPT, CT1-CT2, TP1-TP7, MP1, MOV, EP1, MC1-MC2, FL1, DL1); (5) later reprint products built around Duel Monsters characters that the owner collects: Egyptian God Decks (EGO1, EGS1), Legendary Dragon Decks (LEDD) and Yugi's Legendary Decks (YGLD). Excluded: GX-era and later products (from Elemental Energy, 2005-11) other than group 5, plus OCG-only and video-game promo sets. A card is classic when any of its printings uses one of these prefixes. Every code was checked against the live cardsets.php response on the version date. The provider has no anime classification, so this list is the source of truth; change it only by editing this file and bumping `version`.",
+  "setCodes": [
+    "LOB", "MRD", "MRL", "SRL", "PSV", "LON", "LOD", "PGD", "MFC", "DCR", "IOC", "AST", "SOD", "RDS", "FET", "TLM", "CRV",
+    "SDY", "SDK", "SDJ", "SDP", "SKE", "SYE",
+    "DB1", "DB2", "DR1", "DR2",
+    "BPT", "CT1", "CT2", "TP1", "TP2", "TP3", "TP4", "TP5", "TP6", "TP7", "MP1", "MOV", "EP1", "MC1", "MC2", "FL1", "DL1",
+    "EGO1", "EGS1", "LEDD", "YGLD"
+  ]
+}
