@@ -1,0 +1,42 @@
+# Render Blueprint — single Node web service (PRD §4, §20).
+# Secrets use `sync: false`: Render prompts for them on first Blueprint sync
+# and never stores them in this file.
+services:
+  - type: web
+    name: yugioh-collection
+    runtime: node
+    # Frankfurt is the closest Render region to the user in Israel.
+    # Region is immutable after creation. DynamoDB stays in us-east-1
+    # (AWS_REGION below), so expect cross-region latency per DB call.
+    region: frankfurt
+    plan: starter # 0.5 CPU / 512 MB (current plan ID: 0.5c-512mb)
+    branch: master
+    autoDeployTrigger: commit
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: "24"
+      - key: AWS_REGION
+        value: us-east-1
+      - key: DYNAMODB_TABLE
+        value: yugioh-collection
+      - key: AUTH_TRUST_HOST
+        value: "true"
+      # Set in the Render Dashboard (secret). AWS keys come from
+      # `terraform output` in infrastructure/terraform.
+      - key: AUTH_SECRET
+        sync: false
+      - key: AUTH_URL
+        sync: false
+      - key: AUTH_GOOGLE_ID
+        sync: false
+      - key: AUTH_GOOGLE_SECRET
+        sync: false
+      - key: AUTHORIZED_GOOGLE_SUB
+        sync: false
+      - key: AWS_ACCESS_KEY_ID
+        sync: false
+      - key: AWS_SECRET_ACCESS_KEY
+        sync: false
