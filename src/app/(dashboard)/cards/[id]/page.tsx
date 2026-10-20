@@ -3,6 +3,7 @@ import Image from "next/image";
 import { notFound, permanentRedirect } from "next/navigation";
 import { Suspense } from "react";
 
+import { AttributeBadge } from "@/components/shared/attribute-badge";
 import { PageHeader } from "@/components/shared/page-header";
 import { Skeleton } from "@/components/ui/skeleton";
 import {
@@ -16,6 +17,8 @@ import { isClassicCard } from "@/features/catalog/classic";
 import { CardCollectionPanel } from "@/features/collection/components/card-collection-panel";
 import { WishlistButton } from "@/features/wishlist/components/wishlist-button";
 import { requireOwner } from "@/lib/auth";
+import { frameClass } from "@/lib/card-frame";
+import { cn } from "@/lib/utils";
 import { getCard } from "@/lib/ygoprodeck";
 
 export default async function CardDetailPage({ params }: PageProps<"/cards/[id]">) {
@@ -55,7 +58,14 @@ export default async function CardDetailPage({ params }: PageProps<"/cards/[id]"
     <>
       <PageHeader
         title={card.name}
-        description={isClassicCard(card) ? <ClassicBadge /> : undefined}
+        description={
+          card.attribute || isClassicCard(card) ? (
+            <span className="flex flex-wrap items-center gap-1.5">
+              <AttributeBadge attribute={card.attribute} />
+              {isClassicCard(card) ? <ClassicBadge /> : null}
+            </span>
+          ) : undefined
+        }
         actions={
           <Suspense fallback={<Skeleton className="h-11 w-36" />}>
             <WishlistButton cardId={card.id} />
@@ -63,19 +73,26 @@ export default async function CardDetailPage({ params }: PageProps<"/cards/[id]"
         }
       />
       <div className="grid gap-6 md:grid-cols-[minmax(0,18rem)_1fr]">
-        <div className="relative mx-auto aspect-[59/86] w-full max-w-72 overflow-hidden rounded-lg bg-muted">
-          {card.imageUrl ? (
-            <Image
-              src={card.imageUrl}
-              alt={card.name}
-              fill
-              priority
-              sizes="(min-width: 768px) 18rem, 80vw"
-              className="object-contain"
-            />
-          ) : (
-            <span className="absolute inset-0 grid place-items-center text-sm text-muted-foreground">No image</span>
+        <div
+          className={cn(
+            "mx-auto w-full max-w-72 rounded-lg bg-linear-to-b p-1 shadow-[0_12px_40px_-8px] shadow-gold/35",
+            frameClass(card.frameType, card.type),
           )}
+        >
+          <div className="relative aspect-[59/86] w-full overflow-hidden rounded-md bg-muted">
+            {card.imageUrl ? (
+              <Image
+                src={card.imageUrl}
+                alt={card.name}
+                fill
+                priority
+                sizes="(min-width: 768px) 18rem, 80vw"
+                className="object-contain"
+              />
+            ) : (
+              <span className="absolute inset-0 grid place-items-center text-sm text-muted-foreground">No image</span>
+            )}
+          </div>
         </div>
 
         <div className="grid content-start gap-4">
@@ -104,7 +121,7 @@ export default async function CardDetailPage({ params }: PageProps<"/cards/[id]"
       </section>
 
       <section className="mt-8">
-        <h2 className="mb-3 text-lg font-semibold">Printings</h2>
+        <h2 className="mb-3 font-display text-lg font-semibold tracking-wide text-gold">Printings</h2>
         <p className="mb-3 text-xs text-muted-foreground">
           Printing prices are per-printing market prices in USD; &ldquo;—&rdquo; means no price is available.
         </p>

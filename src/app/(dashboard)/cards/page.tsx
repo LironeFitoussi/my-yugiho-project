@@ -6,6 +6,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { CardGrid } from "@/features/catalog/components/card-grid";
 import { CardSearchForm } from "@/features/catalog/components/card-search-form";
 import { CatalogAttribution, CatalogUnavailable } from "@/features/catalog/components/catalog-bits";
+import { listAllCopies } from "@/features/collection/queries";
 import { requireOwner } from "@/lib/auth";
 import { searchCards } from "@/lib/ygoprodeck";
 
@@ -45,7 +46,7 @@ export default async function CardsPage({ searchParams }: PageProps<"/cards">) {
 }
 
 async function SearchResults({ q, classicOnly }: { q: string; classicOnly: boolean }) {
-  const result = await searchCards({ q, classicOnly, limit: 40 });
+  const [result, copies] = await Promise.all([searchCards({ q, classicOnly, limit: 40 }), listAllCopies()]);
   if (!result.ok) return <CatalogUnavailable />;
   if (result.data.length === 0) {
     return (
@@ -54,13 +55,16 @@ async function SearchResults({ q, classicOnly }: { q: string; classicOnly: boole
       </p>
     );
   }
+  // cardId → physical copies owned (any printing); drives the "Owned" tag only.
+  const ownedCounts: Record<number, number> = {};
+  for (const copy of copies) ownedCounts[copy.cardId] = (ownedCounts[copy.cardId] ?? 0) + 1;
   return (
     <>
       <p className="mb-3 text-sm text-muted-foreground">
         {result.data.length} result{result.data.length === 1 ? "" : "s"}
         {result.data.length === 40 ? " (showing the first 40 — refine your search)" : ""}
       </p>
-      <CardGrid cards={result.data} />
+      <CardGrid cards={result.data} ownedCounts={ownedCounts} />
     </>
   );
 }
@@ -69,7 +73,7 @@ function ResultsSkeleton() {
   return (
     <div aria-busy="true" aria-label="Searching" className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
       {Array.from({ length: 10 }, (_, i) => (
-        <Skeleton key={i} className="aspect-[59/86] w-full" />
+        <Skeleton key={i} className="aspect-[59/86] w-full rounded-xl" />
       ))}
     </div>
   );

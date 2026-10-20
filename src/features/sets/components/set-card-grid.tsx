@@ -1,8 +1,10 @@
-import { Check } from "lucide-react";
 import Image from "next/image";
 import type { Route } from "next";
 import Link from "next/link";
 
+import { OwnedTag } from "@/components/shared/owned-tag";
+import { frameClass } from "@/lib/card-frame";
+import { cn } from "@/lib/utils";
 import type { CardSummary } from "@/types";
 
 export function SetCardGrid({ cards, owned }: { cards: CardSummary[]; owned: Set<number> }) {
@@ -14,23 +16,26 @@ export function SetCardGrid({ cards, owned }: { cards: CardSummary[]; owned: Set
           <li key={card.id}>
             <Link
               href={`/cards/${card.id}` as Route}
-              className="group flex min-h-11 flex-col gap-1.5 rounded-lg p-1.5 hover:bg-muted/50 focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+              className="group flex min-h-11 flex-col gap-1.5 rounded-lg p-1.5 transition-transform duration-200 hover:-translate-y-1 focus-visible:-translate-y-1 focus-visible:outline-none motion-reduce:hover:translate-y-0"
             >
-              <div className="relative aspect-[59/86] w-full overflow-hidden rounded-md bg-muted">
-                {card.imageUrlSmall ? (
-                  <Image
-                    src={card.imageUrlSmall}
-                    alt=""
-                    fill
-                    sizes="(min-width: 768px) 16vw, 33vw"
-                    className={isOwned ? "object-cover" : "object-cover opacity-50 grayscale"}
-                  />
-                ) : null}
-                {isOwned ? (
-                  <span className="absolute top-1 right-1 flex size-6 items-center justify-center rounded-full bg-primary text-primary-foreground shadow">
-                    <Check className="size-4" aria-hidden />
-                  </span>
-                ) : null}
+              <div
+                className={cn(
+                  "rounded-md bg-linear-to-b p-[2px] shadow-md shadow-black/40 transition-shadow duration-200 group-hover:glow-gold group-focus-visible:glow-gold group-focus-visible:outline-2 group-focus-visible:outline-offset-2 group-focus-visible:outline-ring",
+                  isOwned ? frameClass(null, card.type) : "from-zinc-600 to-zinc-800",
+                )}
+              >
+                <div className="relative aspect-[59/86] w-full overflow-hidden rounded-[3px] bg-muted">
+                  {card.imageUrlSmall ? (
+                    <Image
+                      src={card.imageUrlSmall}
+                      alt=""
+                      fill
+                      sizes="(min-width: 768px) 16vw, 33vw"
+                      className={isOwned ? "object-cover" : "object-cover opacity-50 grayscale"}
+                    />
+                  ) : null}
+                  {isOwned ? <OwnedTag decorative className="absolute top-1 right-1" /> : null}
+                </div>
               </div>
               <span className="line-clamp-2 text-xs font-medium">{card.name}</span>
               <span className="sr-only">{isOwned ? "Owned" : "Missing"}</span>
