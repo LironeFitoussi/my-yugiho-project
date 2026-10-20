@@ -1,0 +1,52 @@
+{
+  "data": [
+    {
+      "id": 83764718,
+      "name": "Monster Reborn",
+      "type": "Spell Card",
+      "humanReadableCardType": "Normal Spell",
+      "frameType": "spell",
+      "desc": "Target 1 monster in either GY; Special Summon it.",
+      "race": "Normal",
+      "ygoprodeck_url": "https://ygoprodeck.com/card/monster-reborn-7027",
+      "card_sets": [
+        {
+          "set_name": "2019 Gold Sarcophagus Tin",
+          "set_code": "TN19-EN011",
+          "set_rarity": "Prismatic Secret Rare",
+          "set_rarity_code": "(PScR)",
+          "set_price": "4.44"
+        },
+        {
+          "set_name": "Battle Pack 2: War of the Giants",
+          "set_code": "BP02-EN128",
+          "set_rarity": "Mosaic Rare",
+          "set_rarity_code": "(MSR)",
+          "set_price": "2.1"
+        }
+      ],
+      "banlist_info": {
+        "ban_tcg": "Limited",
+        "ban_ocg": "Limited",
+        "ban_goat": "Forbidden"
+      },
+      "card_images": [
+        {
+          "id": 83764718,
+          "image_url": "https://images.ygoprodeck.com/images/cards/83764718.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/83764718.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/83764718.jpg"
+        }
+      ],
+      "card_prices": [
+        {
+          "cardmarket_price": "0.02",
+          "tcgplayer_price": "0.20",
+          "ebay_price": "3.95",
+          "amazon_price": "0.79",
+          "coolstuffinc_price": "0.79"
+        }
+      ]
+    }
+  ]
+}

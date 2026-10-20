@@ -1,0 +1,544 @@
+{
+  "data": [
+    {
+      "id": 89631139,
+      "name": "Blue-Eyes White Dragon",
+      "typeline": [
+        "Dragon",
+        "Normal"
+      ],
+      "type": "Normal Monster",
+      "humanReadableCardType": "Normal Monster",
+      "frameType": "normal",
+      "desc": "This legendary dragon is a powerful engine of destruction. Virtually invincible, very few have faced this awesome creature and lived to tell the tale.",
+      "race": "Dragon",
+      "atk": 3000,
+      "def": 2500,
+      "level": 8,
+      "attribute": "LIGHT",
+      "archetype": "Blue-Eyes",
+      "ygoprodeck_url": "https://ygoprodeck.com/card/blue-eyes-white-dragon-7485",
+      "card_sets": [
+        {
+          "set_name": "Legend of Blue Eyes White Dragon",
+          "set_code": "LOB-001",
+          "set_rarity": "Ultra Rare",
+          "set_rarity_code": "(UR)",
+          "set_price": "62.15"
+        },
+        {
+          "set_name": "Legend of Blue Eyes White Dragon",
+          "set_code": "LOB-E001",
+          "set_rarity": "Ultra Rare",
+          "set_rarity_code": "(UR)",
+          "set_price": "681.49"
+        },
+        {
+          "set_name": "Legend of Blue Eyes White Dragon",
+          "set_code": "LOB-EN001",
+          "set_rarity": "Ultra Rare",
+          "set_rarity_code": "(UR)",
+          "set_price": "0"
+        },
+        {
+          "set_name": "2016 Mega-Tins",
+          "set_code": "CT13-EN008",
+          "set_rarity": "Ultra Rare",
+          "set_rarity_code": "(UR)",
+          "set_price": "74.49"
+        }
+      ],
+      "card_images": [
+        {
+          "id": 89631139,
+          "image_url": "https://images.ygoprodeck.com/images/cards/89631139.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/89631139.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/89631139.jpg"
+        },
+        {
+          "id": 89631139,
+          "image_url": "https://images.ygoprodeck.com/images/cards/89631139.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/89631139.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/89631139.jpg"
+        },
+        {
+          "id": 89631139,
+          "image_url": "https://images.ygoprodeck.com/images/cards/89631139.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/89631139.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/89631139.jpg"
+        },
+        {
+          "id": 89631140,
+          "image_url": "https://images.ygoprodeck.com/images/cards/89631140.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/89631140.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/89631140.jpg"
+        },
+        {
+          "id": 89631140,
+          "image_url": "https://images.ygoprodeck.com/images/cards/89631140.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/89631140.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/89631140.jpg"
+        },
+        {
+          "id": 89631140,
+          "image_url": "https://images.ygoprodeck.com/images/cards/89631140.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/89631140.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/89631140.jpg"
+        },
+        {
+          "id": 89631141,
+          "image_url": "https://images.ygoprodeck.com/images/cards/89631141.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/89631141.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/89631141.jpg"
+        },
+        {
+          "id": 89631141,
+          "image_url": "https://images.ygoprodeck.com/images/cards/89631141.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/89631141.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/89631141.jpg"
+        },
+        {
+          "id": 89631141,
+          "image_url": "https://images.ygoprodeck.com/images/cards/89631141.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/89631141.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/89631141.jpg"
+        },
+        {
+          "id": 89631142,
+          "image_url": "https://images.ygoprodeck.com/images/cards/89631142.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/89631142.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/89631142.jpg"
+        },
+        {
+          "id": 89631142,
+          "image_url": "https://images.ygoprodeck.com/images/cards/89631142.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/89631142.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/89631142.jpg"
+        },
+        {
+          "id": 89631142,
+          "image_url": "https://images.ygoprodeck.com/images/cards/89631142.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/89631142.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/89631142.jpg"
+        },
+        {
+          "id": 89631143,
+          "image_url": "https://images.ygoprodeck.com/images/cards/89631143.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/89631143.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/89631143.jpg"
+        },
+        {
+          "id": 89631143,
+          "image_url": "https://images.ygoprodeck.com/images/cards/89631143.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/89631143.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/89631143.jpg"
+        },
+        {
+          "id": 89631143,
+          "image_url": "https://images.ygoprodeck.com/images/cards/89631143.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/89631143.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/89631143.jpg"
+        },
+        {
+          "id": 89631144,
+          "image_url": "https://images.ygoprodeck.com/images/cards/89631144.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/89631144.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/89631144.jpg"
+        },
+        {
+          "id": 89631144,
+          "image_url": "https://images.ygoprodeck.com/images/cards/89631144.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/89631144.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/89631144.jpg"
+        },
+        {
+          "id": 89631144,
+          "image_url": "https://images.ygoprodeck.com/images/cards/89631144.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/89631144.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/89631144.jpg"
+        },
+        {
+          "id": 89631145,
+          "image_url": "https://images.ygoprodeck.com/images/cards/89631145.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/89631145.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/89631145.jpg"
+        },
+        {
+          "id": 89631145,
+          "image_url": "https://images.ygoprodeck.com/images/cards/89631145.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/89631145.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/89631145.jpg"
+        },
+        {
+          "id": 89631145,
+          "image_url": "https://images.ygoprodeck.com/images/cards/89631145.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/89631145.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/89631145.jpg"
+        },
+        {
+          "id": 89631146,
+          "image_url": "https://images.ygoprodeck.com/images/cards/89631146.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/89631146.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/89631146.jpg"
+        },
+        {
+          "id": 89631146,
+          "image_url": "https://images.ygoprodeck.com/images/cards/89631146.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/89631146.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/89631146.jpg"
+        },
+        {
+          "id": 89631146,
+          "image_url": "https://images.ygoprodeck.com/images/cards/89631146.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/89631146.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/89631146.jpg"
+        }
+      ],
+      "card_prices": [
+        {
+          "cardmarket_price": "0.09",
+          "tcgplayer_price": "0.16",
+          "ebay_price": "5.95",
+          "amazon_price": "3.90",
+          "coolstuffinc_price": "0.99"
+        }
+      ]
+    },
+    {
+      "id": 91152256,
+      "name": "Celtic Guardian",
+      "typeline": [
+        "Warrior",
+        "Normal"
+      ],
+      "type": "Normal Monster",
+      "humanReadableCardType": "Normal Monster",
+      "frameType": "normal",
+      "desc": "An elf who learned to wield a sword, he baffles enemies with lightning-swift attacks.",
+      "race": "Warrior",
+      "atk": 1400,
+      "def": 1200,
+      "level": 4,
+      "attribute": "EARTH",
+      "archetype": "Celtic Guard",
+      "ygoprodeck_url": "https://ygoprodeck.com/card/celtic-guardian-7610",
+      "card_sets": [
+        {
+          "set_name": "Legend of Blue Eyes White Dragon",
+          "set_code": "LOB-007",
+          "set_rarity": "Super Rare",
+          "set_rarity_code": "(SR)",
+          "set_price": "10.42"
+        },
+        {
+          "set_name": "Legend of Blue Eyes White Dragon",
+          "set_code": "LOB-E005",
+          "set_rarity": "Super Rare",
+          "set_rarity_code": "(SR)",
+          "set_price": "14.44"
+        },
+        {
+          "set_name": "Legend of Blue Eyes White Dragon",
+          "set_code": "LOB-EN007",
+          "set_rarity": "Super Rare",
+          "set_rarity_code": "(SR)",
+          "set_price": "0"
+        },
+        {
+          "set_name": "Anniversary Pack",
+          "set_code": "YAP1-EN004",
+          "set_rarity": "Ultra Rare",
+          "set_rarity_code": "(UR)",
+          "set_price": "42.36"
+        }
+      ],
+      "card_images": [
+        {
+          "id": 91152256,
+          "image_url": "https://images.ygoprodeck.com/images/cards/91152256.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/91152256.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/91152256.jpg"
+        },
+        {
+          "id": 91152256,
+          "image_url": "https://images.ygoprodeck.com/images/cards/91152256.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/91152256.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/91152256.jpg"
+        },
+        {
+          "id": 91152256,
+          "image_url": "https://images.ygoprodeck.com/images/cards/91152256.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/91152256.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/91152256.jpg"
+        },
+        {
+          "id": 91152257,
+          "image_url": "https://images.ygoprodeck.com/images/cards/91152257.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/91152257.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/91152257.jpg"
+        },
+        {
+          "id": 91152257,
+          "image_url": "https://images.ygoprodeck.com/images/cards/91152257.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/91152257.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/91152257.jpg"
+        },
+        {
+          "id": 91152257,
+          "image_url": "https://images.ygoprodeck.com/images/cards/91152257.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/91152257.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/91152257.jpg"
+        },
+        {
+          "id": 91152258,
+          "image_url": "https://images.ygoprodeck.com/images/cards/91152258.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/91152258.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/91152258.jpg"
+        },
+        {
+          "id": 91152258,
+          "image_url": "https://images.ygoprodeck.com/images/cards/91152258.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/91152258.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/91152258.jpg"
+        },
+        {
+          "id": 91152258,
+          "image_url": "https://images.ygoprodeck.com/images/cards/91152258.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/91152258.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/91152258.jpg"
+        }
+      ],
+      "card_prices": [
+        {
+          "cardmarket_price": "0.02",
+          "tcgplayer_price": "0.33",
+          "ebay_price": "5.00",
+          "amazon_price": "1.48",
+          "coolstuffinc_price": "0.25"
+        }
+      ]
+    },
+    {
+      "id": 36996508,
+      "name": "Dark Magician",
+      "typeline": [
+        "Spellcaster",
+        "Normal"
+      ],
+      "type": "Normal Monster",
+      "humanReadableCardType": "Normal Monster",
+      "frameType": "normal",
+      "desc": "''The ultimate wizard in terms of attack and defense.''",
+      "race": "Spellcaster",
+      "atk": 2500,
+      "def": 2100,
+      "level": 7,
+      "attribute": "DARK",
+      "archetype": "Dark Magician",
+      "ygoprodeck_url": "https://ygoprodeck.com/card/dark-magician-4003",
+      "card_sets": [
+        {
+          "set_name": "Legend of Blue Eyes White Dragon",
+          "set_code": "LOB-005",
+          "set_rarity": "Ultra Rare",
+          "set_rarity_code": "(UR)",
+          "set_price": "46.71"
+        },
+        {
+          "set_name": "Legend of Blue Eyes White Dragon",
+          "set_code": "LOB-E003",
+          "set_rarity": "Ultra Rare",
+          "set_rarity_code": "(UR)",
+          "set_price": "53.66"
+        },
+        {
+          "set_name": "Legend of Blue Eyes White Dragon",
+          "set_code": "LOB-EN005",
+          "set_rarity": "Ultra Rare",
+          "set_rarity_code": "(UR)",
+          "set_price": "49.41"
+        },
+        {
+          "set_name": "2016 Mega-Tins",
+          "set_code": "CT13-EN003",
+          "set_rarity": "Ultra Rare",
+          "set_rarity_code": "(UR)",
+          "set_price": "6.97"
+        }
+      ],
+      "card_images": [
+        {
+          "id": 36996508,
+          "image_url": "https://images.ygoprodeck.com/images/cards/36996508.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/36996508.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/36996508.jpg"
+        },
+        {
+          "id": 36996508,
+          "image_url": "https://images.ygoprodeck.com/images/cards/36996508.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/36996508.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/36996508.jpg"
+        },
+        {
+          "id": 36996508,
+          "image_url": "https://images.ygoprodeck.com/images/cards/36996508.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/36996508.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/36996508.jpg"
+        },
+        {
+          "id": 46986414,
+          "image_url": "https://images.ygoprodeck.com/images/cards/46986414.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/46986414.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/46986414.jpg"
+        },
+        {
+          "id": 46986414,
+          "image_url": "https://images.ygoprodeck.com/images/cards/46986414.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/46986414.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/46986414.jpg"
+        },
+        {
+          "id": 46986414,
+          "image_url": "https://images.ygoprodeck.com/images/cards/46986414.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/46986414.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/46986414.jpg"
+        },
+        {
+          "id": 46986415,
+          "image_url": "https://images.ygoprodeck.com/images/cards/46986415.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/46986415.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/46986415.jpg"
+        },
+        {
+          "id": 46986415,
+          "image_url": "https://images.ygoprodeck.com/images/cards/46986415.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/46986415.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/46986415.jpg"
+        },
+        {
+          "id": 46986415,
+          "image_url": "https://images.ygoprodeck.com/images/cards/46986415.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/46986415.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/46986415.jpg"
+        },
+        {
+          "id": 46986416,
+          "image_url": "https://images.ygoprodeck.com/images/cards/46986416.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/46986416.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/46986416.jpg"
+        },
+        {
+          "id": 46986416,
+          "image_url": "https://images.ygoprodeck.com/images/cards/46986416.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/46986416.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/46986416.jpg"
+        },
+        {
+          "id": 46986416,
+          "image_url": "https://images.ygoprodeck.com/images/cards/46986416.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/46986416.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/46986416.jpg"
+        },
+        {
+          "id": 46986417,
+          "image_url": "https://images.ygoprodeck.com/images/cards/46986417.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/46986417.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/46986417.jpg"
+        },
+        {
+          "id": 46986417,
+          "image_url": "https://images.ygoprodeck.com/images/cards/46986417.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/46986417.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/46986417.jpg"
+        },
+        {
+          "id": 46986417,
+          "image_url": "https://images.ygoprodeck.com/images/cards/46986417.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/46986417.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/46986417.jpg"
+        },
+        {
+          "id": 46986418,
+          "image_url": "https://images.ygoprodeck.com/images/cards/46986418.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/46986418.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/46986418.jpg"
+        },
+        {
+          "id": 46986418,
+          "image_url": "https://images.ygoprodeck.com/images/cards/46986418.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/46986418.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/46986418.jpg"
+        },
+        {
+          "id": 46986418,
+          "image_url": "https://images.ygoprodeck.com/images/cards/46986418.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/46986418.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/46986418.jpg"
+        },
+        {
+          "id": 46986419,
+          "image_url": "https://images.ygoprodeck.com/images/cards/46986419.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/46986419.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/46986419.jpg"
+        },
+        {
+          "id": 46986419,
+          "image_url": "https://images.ygoprodeck.com/images/cards/46986419.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/46986419.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/46986419.jpg"
+        },
+        {
+          "id": 46986419,
+          "image_url": "https://images.ygoprodeck.com/images/cards/46986419.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/46986419.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/46986419.jpg"
+        },
+        {
+          "id": 46986420,
+          "image_url": "https://images.ygoprodeck.com/images/cards/46986420.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/46986420.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/46986420.jpg"
+        },
+        {
+          "id": 46986420,
+          "image_url": "https://images.ygoprodeck.com/images/cards/46986420.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/46986420.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/46986420.jpg"
+        },
+        {
+          "id": 46986420,
+          "image_url": "https://images.ygoprodeck.com/images/cards/46986420.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/46986420.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/46986420.jpg"
+        },
+        {
+          "id": 46986421,
+          "image_url": "https://images.ygoprodeck.com/images/cards/46986421.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/46986421.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/46986421.jpg"
+        },
+        {
+          "id": 46986421,
+          "image_url": "https://images.ygoprodeck.com/images/cards/46986421.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/46986421.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/46986421.jpg"
+        },
+        {
+          "id": 46986421,
+          "image_url": "https://images.ygoprodeck.com/images/cards/46986421.jpg",
+          "image_url_small": "https://images.ygoprodeck.com/images/cards_small/46986421.jpg",
+          "image_url_cropped": "https://images.ygoprodeck.com/images/cards_cropped/46986421.jpg"
+        }
+      ],
+      "card_prices": [
+        {
+          "cardmarket_price": "0.02",
+          "tcgplayer_price": "0.33",
+          "ebay_price": "0.99",
+          "amazon_price": "14.45",
+          "coolstuffinc_price": "0.39"
+        }
+      ]
+    }
+  ]
+}
