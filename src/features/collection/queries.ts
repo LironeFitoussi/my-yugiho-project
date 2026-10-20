@@ -1,25 +1,32 @@
 import "server-only";
 
-// CONTRACT STUB — owned by the Collection agent (Wave 1 B), which replaces the bodies.
-// Every function must call requireOwner() itself.
+import { cache } from "react";
+
+import { requireOwner } from "@/lib/auth";
 import type { CardCopy } from "@/types";
 
-/** All copies (all pages), newest first is not required. Cached per request with React cache(). */
-export async function listAllCopies(): Promise<CardCopy[]> {
-  return [];
-}
+import { cardIdSchema } from "./schemas";
+import { queryAllCopies, queryCopiesForCard, queryRecentAcquisitions } from "./repository";
 
-/** Unique owned card IDs — the basis of set completion (PRD §9). */
+/** All copies (all pages), newest first is not required. Cached per request with React cache(). */
+export const listAllCopies = cache(async (): Promise<CardCopy[]> => {
+  await requireOwner();
+  return queryAllCopies();
+});
+
+/** Unique owned card IDs — the basis of set completion (PRD §9). Duplicates never add. */
 export async function listOwnedCardIds(): Promise<Set<number>> {
-  return new Set();
+  const copies = await listAllCopies();
+  return new Set(copies.map((copy) => copy.cardId));
 }
 
 export async function listCopiesForCard(cardId: number): Promise<CardCopy[]> {
-  void cardId;
-  return [];
+  await requireOwner();
+  return queryCopiesForCard(cardIdSchema.parse(cardId));
 }
 
 export async function listRecentAcquisitions(limit = 10): Promise<CardCopy[]> {
-  void limit;
-  return [];
+  await requireOwner();
+  const safeLimit = Math.min(Math.max(Math.trunc(limit) || 10, 1), 100);
+  return queryRecentAcquisitions(safeLimit);
 }
