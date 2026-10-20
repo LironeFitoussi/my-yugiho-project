@@ -1,6 +1,7 @@
 import "server-only";
 
 import { redirect } from "next/navigation";
+import { connection } from "next/server";
 import { cache } from "react";
 
 import { auth, isAuthorizedSub } from "./config";
@@ -11,6 +12,8 @@ export type Owner = { sub: string; name: string | null; email: string | null; im
 
 /** Returns the authorized owner, or null. Re-checks the `sub` on every call — never trust the cookie alone. */
 export const getOwner = cache(async (): Promise<Owner | null> => {
+  // Auth.js uses crypto before touching request data; opt out of prerendering first (Cache Components).
+  await connection();
   const session = await auth();
   const sub = session?.user?.id;
   if (!isAuthorizedSub(sub)) return null;

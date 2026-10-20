@@ -4,3 +4,4 @@
 backend.hcl
 crash.log
 !*.example
+*.tfplan
