@@ -14,6 +14,7 @@ import {
 import { PrintingsTable } from "@/features/catalog/components/printings-table";
 import { isClassicCard } from "@/features/catalog/classic";
 import { CardCollectionPanel } from "@/features/collection/components/card-collection-panel";
+import { WishlistButton } from "@/features/wishlist/components/wishlist-button";
 import { requireOwner } from "@/lib/auth";
 import { getCard } from "@/lib/ygoprodeck";
 
@@ -55,6 +56,11 @@ export default async function CardDetailPage({ params }: PageProps<"/cards/[id]"
       <PageHeader
         title={card.name}
         description={isClassicCard(card) ? <ClassicBadge /> : undefined}
+        actions={
+          <Suspense fallback={<Skeleton className="h-11 w-36" />}>
+            <WishlistButton cardId={card.id} />
+          </Suspense>
+        }
       />
       <div className="grid gap-6 md:grid-cols-[minmax(0,18rem)_1fr]">
         <div className="relative mx-auto aspect-[59/86] w-full max-w-72 overflow-hidden rounded-lg bg-muted">
