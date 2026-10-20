@@ -18,7 +18,12 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   callbacks: {
     // Reject every Google account except the authorized subject.
     signIn({ account, profile }) {
-      return account?.provider === "google" && isAuthorizedSub(profile?.sub);
+      const allowed = account?.provider === "google" && isAuthorizedSub(profile?.sub);
+      if (!allowed && process.env.NODE_ENV === "development") {
+        // Dev-only aid for setting AUTHORIZED_GOOGLE_SUB; never logged in production.
+        console.info(`[auth] Rejected Google sign-in. sub=${profile?.sub ?? "unknown"}`);
+      }
+      return allowed;
     },
     jwt({ token, profile }) {
       if (profile?.sub) token.sub = profile.sub;

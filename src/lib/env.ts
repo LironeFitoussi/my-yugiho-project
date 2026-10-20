@@ -6,7 +6,15 @@ const serverEnvSchema = z.object({
   AUTH_SECRET: z.string().min(1),
   AUTH_GOOGLE_ID: z.string().min(1),
   AUTH_GOOGLE_SECRET: z.string().min(1),
-  AUTHORIZED_GOOGLE_SUB: z.string().regex(/^\d+$/, "must be a numeric Google subject id"),
+  AUTHORIZED_GOOGLE_SUB: z
+    .string({ error: "is missing" })
+    .transform((v) => v.trim().replace(/^["']|["']$/g, ""))
+    .pipe(
+      z
+        .string()
+        .refine((v) => !v.includes("@"), "looks like an email — it must be the numeric Google account id (sub)")
+        .refine((v) => /^\d+$/.test(v), "must be the numeric Google account id (sub)"),
+    ),
   AWS_REGION: z.string().min(1).default("eu-central-1"),
   DYNAMODB_TABLE: z.string().min(1).default("yugioh-collection"),
   DYNAMODB_ENDPOINT: z.url().optional(),
@@ -21,8 +29,9 @@ export function serverEnv(): ServerEnv {
   if (!cached) {
     const parsed = serverEnvSchema.safeParse(process.env);
     if (!parsed.success) {
-      const keys = parsed.error.issues.map((i) => i.path.join(".")).join(", ");
-      throw new Error(`Invalid server environment: ${keys}`);
+      // Names and reasons only — never echo values.
+      const problems = parsed.error.issues.map((i) => `${i.path.join(".")} ${i.message}`).join("; ");
+      throw new Error(`Invalid server environment: ${problems}`);
     }
     cached = parsed.data;
   }
