@@ -2,7 +2,7 @@ import { redirect } from "next/navigation";
 import { Suspense } from "react";
 
 import { ArcaneBackdrop } from "@/components/layout/arcane-backdrop";
-import { Emblem } from "@/components/shared/emblem";
+import { APP_NAME, BrandLogo } from "@/components/shared/brand-logo";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { getOwner, signIn } from "@/lib/auth";
@@ -34,12 +34,12 @@ export default function LoginPage({ searchParams }: PageProps<"/login">) {
           <div className="relative mb-2 grid place-items-center">
             <div
               aria-hidden
-              className="absolute size-24 animate-glow-pulse rounded-full bg-[radial-gradient(closest-side,oklch(0.82_0.14_85/0.35),oklch(0.55_0.2_300/0.2)_60%,transparent)]"
+              className="absolute size-36 animate-glow-pulse rounded-full bg-[radial-gradient(closest-side,oklch(0.82_0.14_85/0.35),oklch(0.55_0.2_300/0.2)_60%,transparent)]"
             />
-            <Emblem className="relative size-16 drop-shadow-[0_0_10px_oklch(0.82_0.14_85/0.6)]" />
+            <BrandLogo className="relative size-28" priority />
           </div>
-          <CardTitle className="text-2xl font-bold tracking-wide text-gold-gradient">Yu-Gi-Oh! Collection</CardTitle>
-          <CardDescription>Private collection manager. Sign in with the authorized Google account.</CardDescription>
+          <CardTitle className="text-2xl font-bold tracking-wide text-gold-gradient">{APP_NAME}</CardTitle>
+          <CardDescription>Your private Yu-Gi-Oh! collection vault. Sign in with the authorized Google account.</CardDescription>
         </CardHeader>
         <CardContent className="grid gap-4">
           <Suspense>
