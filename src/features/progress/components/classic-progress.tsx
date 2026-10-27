@@ -13,15 +13,7 @@ const fmt = new Intl.NumberFormat("en-US");
 export async function ClassicProgress({ variant }: { variant: "hero" | "bar" }) {
   const progress = await getClassicProgress();
 
-  if (!progress.ok) {
-    return (
-      <p className="rounded-xl border border-dashed p-4 text-sm text-muted-foreground">
-        Overall classic progress is unavailable while the card catalog can&apos;t be reached.
-      </p>
-    );
-  }
-
-  const { owned, total, percent, setCount } = progress;
+  const { owned, total, percent, unlinked, listVersion } = progress;
   const label = `${fmt.format(owned)} of ${fmt.format(total)} classic Duel Monsters cards (${percent}%)`;
 
   if (variant === "bar") {
@@ -96,7 +88,8 @@ export async function ClassicProgress({ variant }: { variant: "hero" | "bar" }) 
             <span className="text-lg font-normal text-muted-foreground"> / {fmt.format(total)} cards</span>
           </p>
           <p className="mt-1 text-sm text-muted-foreground">
-            {NOTE} Across {setCount} classic sets.
+            {NOTE} English TCG cards first released 2002-03-08 to 2004-09-29 (list {listVersion}).
+            {unlinked > 0 ? ` ${unlinked} cards without a printed passcode can't be matched yet and count as missing.` : null}
           </p>
           <Link
             href={"/sets?classic=1" as Route}

@@ -106,11 +106,12 @@ describe("normalizeCard", () => {
     expect(card.printings.find((p) => p.setCode === "BP02-EN128")?.price?.amountMinor).toBe(210);
   });
 
-  it("summaries carry the classic flag from printings", () => {
+  it("summaries carry the classic flag from the curated card pool", () => {
     const lob = cards("cardinfo-cardset-lob.json").map((raw) => toCardSummary(normalizeCard(raw)));
     expect(lob.every((c) => c.isClassic)).toBe(true);
-    const reborn = toCardSummary(normalizeCard(cards("cardinfo-spell.json")[0]!));
-    expect(reborn.isClassic).toBe(false); // fixture trimmed to non-classic printings
+    const reborn = normalizeCard(cards("cardinfo-spell.json")[0]!);
+    expect(toCardSummary(reborn).isClassic).toBe(true); // in the pool even though the fixture lists only modern printings
+    expect(toCardSummary({ ...reborn, id: 1 }).isClassic).toBe(false);
   });
 
   it("drops malformed records instead of failing the page", () => {
